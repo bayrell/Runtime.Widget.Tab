@@ -31,9 +31,12 @@
 
 
 <template>
-	<div class="tabs__item" class={{ this.model.isActive(this.name) ? "tabs__item--active" : "" }}>
-		%render this.renderSlot("default");
-	</div>
+	%if (this.model.canShow(this.name))
+	{
+		<div class="tabs__item" class={{ this.model.isActive(this.name) ? "tabs__item--active" : "" }}>
+			%render this.renderSlot("default");
+		</div>
+	}
 </template>
 
 

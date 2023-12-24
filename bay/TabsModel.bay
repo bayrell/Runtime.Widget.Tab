@@ -18,6 +18,7 @@
 
 namespace Runtime.Widget.Tab;
 
+use Runtime.lib;
 use Runtime.Web.BaseModel;
 
 
@@ -44,7 +45,7 @@ class TabsModel extends BaseModel
 	/**
 	 * Returns true if active
 	 */
-	void isActive(string active) => this.active == active;
+	void isActive(string tab_name) => this.active == tab_name;
 	
 	
 	/**
@@ -53,5 +54,17 @@ class TabsModel extends BaseModel
 	void setActive(string active)
 	{
 		this.active = active;
+	}
+	
+	
+	/**
+	 * Can show
+	 */
+	bool canShow(string tab_name)
+	{
+		Map tab = this.tabs.findItem( lib::equalAttr("name", tab_name) );
+		if (tab == null) return false;
+		if (tab.has("href") and tab.get("name") != tab_name) return false;
+		return true;
 	}
 }
