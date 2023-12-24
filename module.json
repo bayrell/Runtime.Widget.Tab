@@ -1,0 +1,20 @@
+{
+	"name": "Runtime.Widget.Tab",
+	"assets":
+	[
+		"Tab.bay",
+		"Tabs.bay",
+		"TabsModel.bay"
+	],
+	"src": "./bay",
+	"dest":
+	{
+		"php": "./php",
+		"es6": "./es6",
+		"nodejs": "./nodejs"
+	},
+	"allow":
+	[
+		"\\.bay$"
+	]
+}
