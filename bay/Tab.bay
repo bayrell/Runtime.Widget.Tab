@@ -33,7 +33,9 @@
 <template>
 	%if (this.model.canShow(this.name))
 	{
-		<div class="tabs__item" class={{ this.model.isActive(this.name) ? "tabs__item--active" : "" }}>
+		<div class="tabs__item" class={{ this.model.isActive(this.name) ? "tabs__item--active" : "" }}
+			data-tab={{ this.name }}
+		>
 			%render this.renderSlot("default");
 		</div>
 	}
