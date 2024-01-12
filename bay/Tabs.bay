@@ -106,7 +106,9 @@
 
 void onClick(var e)
 {
-	this.model.setActive(e.target.getAttribute("data-name"));
+	string tab_name = e.target.getAttribute("data-name");
+	this.model.setActive(tab_name);
+	this.emit("select", tab_name);
 }
 
 </script>
